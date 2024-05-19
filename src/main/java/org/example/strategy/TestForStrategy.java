@@ -1,6 +1,6 @@
 package org.example.strategy;
 
-public class ClientForStrategy {
+public class TestForStrategy {
     public static void main(String[] args) {
         Duck woodDuck = new WoodDuck(new FlyNoWay(), new Mute());
 
