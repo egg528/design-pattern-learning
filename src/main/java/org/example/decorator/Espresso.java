@@ -1,12 +1,13 @@
 package org.example.decorator;
 
-public class DarkRoast extends Beverage {
-    protected DarkRoast(String description) {
-        super(description);
+public class Espresso extends Beverage {
+
+    public Espresso() {
+        super("에스프레소");
     }
 
     @Override
     double cost() {
-        return 0.99;
+        return 1.99;
     }
 }
