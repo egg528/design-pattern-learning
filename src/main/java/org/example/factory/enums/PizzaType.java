@@ -1,2 +1,5 @@
-package org.example.factory.enums;public enum PizzaType {
+package org.example.factory.enums;
+
+public enum PizzaType {
+    BASIC, CHEESE
 }

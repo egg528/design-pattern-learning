@@ -1,11 +1,21 @@
-package org.example.factory;
+package org.example.factory.pizza;
+
+import org.example.factory.ingredient.Cheese;
+import org.example.factory.ingredient.PizzaIngredientFactory;
 
 public class CheesePizza extends Pizza {
-    public CheesePizza() {
-        this.name = "치즈 피자";
-        this.dough = "씬 크러스트 도우";
-        this.sauce = "마리마나 소스";
+    private final Cheese cheese;
+    public CheesePizza(PizzaIngredientFactory ingredientFactory) {
+        super(ingredientFactory.createDough(), ingredientFactory.createSauce());
+        this.name =  "%s 꼬소한 치즈 피자".formatted(ingredientFactory.getStyle());
+        this.cheese = ingredientFactory.createCheese();
+    }
 
-        this.toppings.add("잘게 썬 레지아노 치즈");
+    @Override
+    public void prepare() {
+        System.out.println(name + ": 피자를 준비 중입니다...");
+        System.out.println(dough.getName() + ": 도우를 돌리고...");
+        System.out.println(sauce.getName() + ": 소스를 뿌리고...");
+        System.out.println(cheese.getName() + ": 치즈 피자에는 치즈를 뿌려야죠...");
     }
 }

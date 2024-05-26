@@ -2,17 +2,16 @@ package org.example.factory.pizza;
 
 import org.example.factory.ingredient.PizzaIngredientFactory;
 
-public class CheesePizza extends Pizza {
-    public CheesePizza(PizzaIngredientFactory ingredientFactory) {
-        this.name =  "%s 꼬소한 치즈 피자".formatted(ingredientFactory.getStyle());
-        this.dough = ingredientFactory.createDough();
-        this.sauce = ingredientFactory.createSauce();
+public class BasicPizza extends Pizza {
+    public BasicPizza(PizzaIngredientFactory ingredientFactory) {
+        super(ingredientFactory.createDough(), ingredientFactory.createSauce());
+        this.name =  "%s 기본 피자".formatted(ingredientFactory.getStyle());
     }
 
     @Override
-    void prepare() {
+    public void prepare() {
         System.out.println(name + " 피자를 준비 중입니다...");
-        System.out.println(dough + " 도우를 돌리고...");
-        System.out.println(sauce + " 소스를 뿌리고...");
+        System.out.println(dough.getName() + " 도우를 돌리고...");
+        System.out.println(sauce.getName() + " 소스를 뿌리고...");
     }
 }

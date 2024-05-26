@@ -1,13 +1,22 @@
 package org.example.factory.ingredient;
 
-public class NewYorkPizzaIngredientFactory extends PizzaIngredientFactory{
+public class SeoulPizzaIngredientFactory extends PizzaIngredientFactory{
+    public SeoulPizzaIngredientFactory() {
+        super("서울");
+    }
+
     @Override
     public Dough createDough() {
-        return null;
+        return new SeoulStyleDough();
     }
 
     @Override
     public Sauce createSauce() {
-        return null;
+        return new SeoulStyleSauce();
+    }
+
+    @Override
+    public Cheese createCheese() {
+        return new SeoulStyleCheese();
     }
 }

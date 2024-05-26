@@ -1,9 +1,9 @@
 package org.example.factory.ingredient;
 
-public abstract class Dough {
+public abstract class Cheese {
     private String name;
 
-    public Dough(String name) {
+    public Cheese(String name) {
         this.name = name;
     }
 
