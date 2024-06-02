@@ -10,5 +10,4 @@ public class StreamingPlayer {
 
     public void off() {
     }
-
 }
